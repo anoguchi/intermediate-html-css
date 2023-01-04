@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+/* 
+Elements, classes, IDs
+Groups of selectors
+Descendent selectors
+Parent-child
+Adjacent/general sibling
+Attribute selectors
+
+*/
+
+ul {
+  color: red;
+}
+
+#last, .nested {
+  color: green;
+}
+
+ul a {
+  color: orange;
+}
+
+/* descendent selector */
+ul ul a {
+  color: purple;
+}
+
+ul ol ul ol li {
+  border: 1px solid blue;
+}
+
+/* parent-child selector */
+ul.nested > li {
+  border: 2px dotted black;
+}
+
+/* primeiro li não será alterado pq não tem um sibling que vem antes */
+ul.nested > li ~ li {
+  color: aqua;
+  padding: 1rem;
+}
+
+/* 
+  Attribute selectors 
+*/
+
+/* Simple attribute value */
+[title] {
+  background-color: greenyellow;
+}
+
+/* Exact attribute value */
+[title="unguessable"] {
+  color: white;
+}
+
+/* Arbitrary substring attribute value  */
+[title*="uess"] {
+  border: 5px dashed black;
+}
+
+/* Beginning substring selector */
+[title^=Guess] {
+  background-color: antiquewhite;
+}
+
+/* Ending substring selector */
+[title$="this"] {
+  background-color: brown;
+  color: yellow;
+}
+
+/* 
+Using the attribute selector, select all links to PDFs on the page and put
+a (PDF) after it.
+*/
+[href*=".pdf"] {
+  color: pink;
+}
+
+[href$=".pdf"]::after {
+  content: ' (PDF)';
+}
