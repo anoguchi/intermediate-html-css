@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+div {
+  max-width: 400px;
+  border-bottom: 1px solid #999;
+  display: flex;
+  flex-flow:  row wrap;
+
+}
+
+div:last-child {
+  border: none;
+}
+
+/* All of children have div */
+div > * {
+  flex-basis: 50%;
+  padding: 1rem;
+}
+
+dt {
+  font-weight: bold;
+
+}
+
+dd {
+  margin-left: 50%;
+}
+
+dd:first-of-type {
+  margin: 0;
+}
